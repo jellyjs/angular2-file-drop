@@ -1,0 +1,46 @@
+{
+  "name": "angular2-file-drop",
+  "version": "0.0.1",
+  "description": "",
+  "main": "build/src/index.js",
+  "typings": "./build/src/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "npm run lint",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "tslint src/*.ts",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jellyjs/angular2-file-drop.git"
+  },
+  "keywords": [
+    "angular",
+    "angular2",
+    "file",
+    "drag",
+    "drop",
+    "upload"
+  ],
+  "author": "Kamil Kisiela <kamil.kisiela@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jellyjs/angular2-file-drop/issues"
+  },
+  "homepage": "https://github.com/jellyjs/angular2-file-drop#readme",
+  "dependencies": {
+    "@angular/common": "^2.0.0-rc.1",
+    "@angular/compiler": "2.0.0-rc.1",
+    "@angular/core": "^2.0.0-rc.1",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.1",
+    "fileapi": "^2.0.20"
+  },
+  "devDependencies": {
+    "tsc": "^1.20150623.0",
+    "tslint": "^3.10.2",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4"
+  }
+}
