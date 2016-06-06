@@ -1,7 +1,7 @@
 {
   "name": "angular2-file-drop",
   "version": "0.0.1",
-  "description": "",
+  "description": "Angular2 component with Drag and Drop support for files",
   "main": "build/src/index.js",
   "typings": "./build/src/index.d.ts",
   "scripts": {
@@ -38,6 +38,7 @@
     "fileapi": "^2.0.20"
   },
   "devDependencies": {
+    "rxjs": "^5.0.0-beta.8",
     "tsc": "^1.20150623.0",
     "tslint": "^3.10.2",
     "typescript": "^1.8.10",
