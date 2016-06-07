@@ -91,7 +91,7 @@ export class FileDropDirective {
   }
 
   private emitFileOver(isOver: boolean): void {
-    this.fileOver.emit(false);
+    this.fileOver.emit(isOver);
   }
 
   private emitFileDrop(file: any): void {
