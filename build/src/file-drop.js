@@ -62,7 +62,7 @@ var FileDropDirective = (function () {
         }
     };
     FileDropDirective.prototype.emitFileOver = function (isOver) {
-        this.fileOver.emit(false);
+        this.fileOver.emit(isOver);
     };
     FileDropDirective.prototype.emitFileDrop = function (file) {
         this.onFileDrop.emit(file);
