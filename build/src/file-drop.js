@@ -39,7 +39,9 @@ let FileDropDirective = class FileDropDirective {
         }
         this.preventAndStop(event);
         this.emitFileOver(false);
-        this.readFile(transfer.files[0]);
+        for (let c = 0; c < transfer.files.length; c++) {
+            this.readFile(transfer.files[c]);
+        }
     }
     readFile(file) {
         const strategy = this.pickStrategy();
