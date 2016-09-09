@@ -1,4 +1,3 @@
-/// <reference path="../typings/main.d.ts" />
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -10,87 +9,86 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 require('fileapi');
-var core_1 = require('@angular/core');
-var FileDropDirective = (function () {
-    function FileDropDirective(element) {
+const core_1 = require('@angular/core');
+let FileDropDirective = class FileDropDirective {
+    constructor(element) {
         this.fileOver = new core_1.EventEmitter();
         this.onFileDrop = new core_1.EventEmitter();
         this.element = element;
     }
-    FileDropDirective.prototype.onDragOver = function (event) {
-        var transfer = this.getDataTransfer(event);
+    onDragOver(event) {
+        const transfer = this.getDataTransfer(event);
         if (!this.haveFiles(transfer.types)) {
             return;
         }
         transfer.dropEffect = 'copy';
         this.preventAndStop(event);
         this.emitFileOver(true);
-    };
-    FileDropDirective.prototype.onDragLeave = function (event) {
+    }
+    onDragLeave(event) {
         if (event.currentTarget === this.element[0]) {
             return;
         }
         this.preventAndStop(event);
         this.emitFileOver(false);
-    };
-    FileDropDirective.prototype.onDrop = function (event) {
-        var transfer = this.getDataTransfer(event);
+    }
+    onDrop(event) {
+        const transfer = this.getDataTransfer(event);
         if (!transfer) {
             return;
         }
         this.preventAndStop(event);
         this.emitFileOver(false);
         this.readFile(transfer.files[0]);
-    };
-    FileDropDirective.prototype.readFile = function (file) {
-        var _this = this;
-        var strategy = this.pickStrategy();
+    }
+    readFile(file) {
+        const strategy = this.pickStrategy();
         if (!strategy) {
             this.emitFileDrop(file);
         }
         else {
             // XXX Waiting for angular/zone.js#358
-            var method = "readAs" + strategy;
-            FileAPI[method](file, function (event) {
+            const method = `readAs${strategy}`;
+            FileAPI[method](file, (event) => {
                 if (event.type === 'load') {
-                    _this.emitFileDrop(event.result);
+                    this.emitFileDrop(event.result);
                 }
                 else if (event.type === 'error') {
-                    throw new Error("Couldn't read file '" + file.name + "'");
+                    throw new Error(`Couldn't read file '${file.name}'`);
                 }
             });
         }
-    };
-    FileDropDirective.prototype.emitFileOver = function (isOver) {
+    }
+    emitFileOver(isOver) {
         this.fileOver.emit(isOver);
-    };
-    FileDropDirective.prototype.emitFileDrop = function (file) {
+    }
+    emitFileDrop(file) {
         this.onFileDrop.emit(file);
-    };
-    FileDropDirective.prototype.pickStrategy = function () {
+    }
+    pickStrategy() {
         if (!this.options) {
             return;
         }
         if (this.hasStrategy(this.options.readAs)) {
             return this.options.readAs;
         }
-    };
-    FileDropDirective.prototype.hasStrategy = function (type) {
+    }
+    hasStrategy(type) {
         return [
             'DataURL',
             'BinaryString',
             'ArrayBuffer',
             'Text',
         ].indexOf(type) !== -1;
-    };
-    FileDropDirective.prototype.getDataTransfer = function (event) {
+    }
+    getDataTransfer(event) {
         return event.dataTransfer ? event.dataTransfer : event.originalEvent.dataTransfer;
-    };
-    FileDropDirective.prototype.preventAndStop = function (event) {
+    }
+    preventAndStop(event) {
         event.preventDefault();
         event.stopPropagation();
-    };
-    FileDropDirective.prototype.haveFiles = function (types) {
+    }
+    haveFiles(types) {
         if (!types) {
             return false;
         }
@@ -101,48 +99,47 @@ var FileDropDirective = (function () {
             return types.contains('Files');
         }
         return false;
-    };
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], FileDropDirective.prototype, "fileOver", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], FileDropDirective.prototype, "onFileDrop", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], FileDropDirective.prototype, "options", void 0);
-    __decorate([
-        core_1.HostListener('dragover', [
-            '$event',
-        ]), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [DragEvent]), 
-        __metadata('design:returntype', void 0)
-    ], FileDropDirective.prototype, "onDragOver", null);
-    __decorate([
-        core_1.HostListener('dragleave', [
-            '$event',
-        ]), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [DragEvent]), 
-        __metadata('design:returntype', void 0)
-    ], FileDropDirective.prototype, "onDragLeave", null);
-    __decorate([
-        core_1.HostListener('drop', [
-            '$event',
-        ]), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [DragEvent]), 
-        __metadata('design:returntype', void 0)
-    ], FileDropDirective.prototype, "onDrop", null);
-    FileDropDirective = __decorate([
-        core_1.Directive({ selector: '[fileDrop]' }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], FileDropDirective);
-    return FileDropDirective;
-}());
+    }
+};
+__decorate([
+    core_1.Output(), 
+    __metadata('design:type', core_1.EventEmitter)
+], FileDropDirective.prototype, "fileOver", void 0);
+__decorate([
+    core_1.Output(), 
+    __metadata('design:type', core_1.EventEmitter)
+], FileDropDirective.prototype, "onFileDrop", void 0);
+__decorate([
+    core_1.Input(), 
+    __metadata('design:type', Object)
+], FileDropDirective.prototype, "options", void 0);
+__decorate([
+    core_1.HostListener('dragover', [
+        '$event',
+    ]), 
+    __metadata('design:type', Function), 
+    __metadata('design:paramtypes', [DragEvent]), 
+    __metadata('design:returntype', void 0)
+], FileDropDirective.prototype, "onDragOver", null);
+__decorate([
+    core_1.HostListener('dragleave', [
+        '$event',
+    ]), 
+    __metadata('design:type', Function), 
+    __metadata('design:paramtypes', [DragEvent]), 
+    __metadata('design:returntype', void 0)
+], FileDropDirective.prototype, "onDragLeave", null);
+__decorate([
+    core_1.HostListener('drop', [
+        '$event',
+    ]), 
+    __metadata('design:type', Function), 
+    __metadata('design:paramtypes', [DragEvent]), 
+    __metadata('design:returntype', void 0)
+], FileDropDirective.prototype, "onDrop", null);
+FileDropDirective = __decorate([
+    core_1.Directive({ selector: '[fileDrop]' }), 
+    __metadata('design:paramtypes', [core_1.ElementRef])
+], FileDropDirective);
 exports.FileDropDirective = FileDropDirective;
 //# sourceMappingURL=file-drop.js.map
