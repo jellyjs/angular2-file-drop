@@ -1,5 +1,3 @@
-/// <reference path="../typings/main.d.ts" />
-
 import 'fileapi';
 
 import {
@@ -68,7 +66,10 @@ export class FileDropDirective {
 
     this.preventAndStop(event);
     this.emitFileOver(false);
-    this.readFile(transfer.files[0]);
+
+    for (let c = 0; c < transfer.files.length; c++) {
+        this.readFile(transfer.files[c]);
+    }
   }
 
   private readFile(file: File): void {
