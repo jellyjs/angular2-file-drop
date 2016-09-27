@@ -1,2 +1,1 @@
-import { FileDropDirective } from './file-drop';
-export { FileDropDirective };
+export * from './file-drop-module';

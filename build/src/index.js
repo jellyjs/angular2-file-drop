@@ -1,4 +1,6 @@
 "use strict";
-var file_drop_1 = require('./file-drop');
-exports.FileDropDirective = file_drop_1.FileDropDirective;
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(require('./file-drop-module'));
 //# sourceMappingURL=index.js.map
