@@ -1,4 +1,3 @@
-/// <reference path="../../typings/main.d.ts" />
 import 'fileapi';
 import { EventEmitter, ElementRef } from '@angular/core';
 export interface Options {

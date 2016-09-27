@@ -10,6 +10,11 @@
     "experimentalDecorators": true,
     "noImplicitAny": false
   },
+  "files": [
+    "./src/index.ts",
+    "./typings/index.d.ts",
+    "./ambient.d.ts"
+  ],
   "exclude": [
     "build",
     "node_modules",
