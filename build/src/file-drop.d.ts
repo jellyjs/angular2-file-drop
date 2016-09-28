@@ -9,9 +9,9 @@ export declare class FileDropDirective {
     options: Options;
     private element;
     constructor(element: ElementRef);
-    onDragOver(event: DragEvent): void;
-    onDragLeave(event: DragEvent): void;
-    onDrop(event: DragEvent): void;
+    onDragOver(event: any): void;
+    onDragLeave(event: any): void;
+    onDrop(event: any): void;
     private readFile(file);
     private emitFileOver(isOver);
     private emitFileDrop(file);

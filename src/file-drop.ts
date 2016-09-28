@@ -30,7 +30,7 @@ export class FileDropDirective {
   @HostListener('dragover', [
     '$event',
   ])
-  public onDragOver(event: DragEvent): void {
+  public onDragOver(event: any): void {
     const transfer = this.getDataTransfer(event);
 
     if (!this.haveFiles(transfer.types)) {
@@ -45,7 +45,7 @@ export class FileDropDirective {
   @HostListener('dragleave', [
     '$event',
   ])
-  public onDragLeave(event: DragEvent): void {
+  public onDragLeave(event: any): void {
     if (event.currentTarget === (this as any).element[0]) {
       return;
     }
@@ -57,7 +57,7 @@ export class FileDropDirective {
   @HostListener('drop', [
     '$event',
   ])
-  public onDrop(event: DragEvent): void {
+  public onDrop(event: any): void {
     const transfer = this.getDataTransfer(event);
 
     if (!transfer) {
@@ -115,11 +115,11 @@ export class FileDropDirective {
     ].indexOf(type) !== -1;
   }
 
-  private getDataTransfer(event: DragEvent | any): DataTransfer {
+  private getDataTransfer(event: any | any): DataTransfer {
     return event.dataTransfer ? event.dataTransfer : event.originalEvent.dataTransfer;
   }
 
-  private preventAndStop(event: DragEvent): void {
+  private preventAndStop(event: any): void {
     event.preventDefault();
     event.stopPropagation();
   }

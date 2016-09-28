@@ -118,7 +118,7 @@ var FileDropDirective = (function () {
             '$event',
         ]), 
         __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [DragEvent]), 
+        __metadata('design:paramtypes', [Object]), 
         __metadata('design:returntype', void 0)
     ], FileDropDirective.prototype, "onDragOver", null);
     __decorate([
@@ -126,7 +126,7 @@ var FileDropDirective = (function () {
             '$event',
         ]), 
         __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [DragEvent]), 
+        __metadata('design:paramtypes', [Object]), 
         __metadata('design:returntype', void 0)
     ], FileDropDirective.prototype, "onDragLeave", null);
     __decorate([
@@ -134,7 +134,7 @@ var FileDropDirective = (function () {
             '$event',
         ]), 
         __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [DragEvent]), 
+        __metadata('design:paramtypes', [Object]), 
         __metadata('design:returntype', void 0)
     ], FileDropDirective.prototype, "onDrop", null);
     FileDropDirective = __decorate([
