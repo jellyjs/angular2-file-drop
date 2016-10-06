@@ -30,7 +30,7 @@ import { FileDropDirective } from 'angular2-file-drop';
 export class PartiesUpload {
   public fileIsOver: boolean = false;
   @Output() public options = {
-    readAs; 'ArrayBuffer'
+    readAs: 'ArrayBuffer'
   };
 
   private file: File;
