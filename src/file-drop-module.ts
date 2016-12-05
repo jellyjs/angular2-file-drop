@@ -5,5 +5,8 @@ import {FileDropDirective} from './file-drop';
   declarations: [
     FileDropDirective,
   ],
+  exports: [
+    FileDropDirective,
+  ],
 })
 export class FileDropModule {}
