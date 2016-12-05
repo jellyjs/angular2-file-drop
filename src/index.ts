@@ -1,1 +1,1 @@
-export * from './file-drop-module';
+export { FileDropModule } from './file-drop-module';
