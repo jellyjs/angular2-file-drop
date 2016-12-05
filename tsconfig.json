@@ -4,8 +4,8 @@
     "module": "commonjs",
     "sourceMap": true,
     "declaration": true,
-    "rootDir": ".",
     "outDir": "build",
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitAny": false
