@@ -5,14 +5,32 @@ Angular2 component with Drag and Drop support for files
 ## Install
 
 ```bash
-npm install angular2-file-drop
+npm install angular2-file-drop --save
 ```
 
 ## Usage
 
+### Import the module
+```TypeScript
+// app.module.ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FileDropModule } from 'angular2-file-drop'; // <-- import the module
+import { MyComponent } from './my.component';
+
+@NgModule({
+    imports: [BrowserModule,
+              FileDropModule // <-- include it in your app module
+             ],
+    declarations: [MyComponent],  
+    bootstrap: [MyComponent]
+})
+export class MyAppModule {}
+```
+
+## Use it
 ```ts
 import { Component, Output } from '@angular/core';
-import { FileDropDirective } from 'angular2-file-drop';
 
 @Component({
   selector: 'upload',
@@ -25,7 +43,6 @@ import { FileDropDirective } from 'angular2-file-drop';
       Drop file here
     </div>
   `,
-  directives: [ FileDropDirective ]
 })
 export class PartiesUpload {
   public fileIsOver: boolean = false;
@@ -40,7 +57,7 @@ export class PartiesUpload {
   }
 
   public onFileDrop(file: File): void {
-    console.log('Got file!');
+    console.log('Got file:', file);
   }
 }
 
