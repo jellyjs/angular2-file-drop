@@ -39,7 +39,9 @@ var FileDropDirective = (function () {
         }
         this.preventAndStop(event);
         this.emitFileOver(false);
-        this.readFile(transfer.files[0]);
+        for (var i = 0; i < transfer.files.length; i++) {
+            this.readFile(transfer.files[i]);
+        }
     };
     FileDropDirective.prototype.readFile = function (file) {
         var _this = this;

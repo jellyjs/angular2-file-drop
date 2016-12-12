@@ -4,20 +4,18 @@
     "module": "commonjs",
     "sourceMap": true,
     "declaration": true,
-    "rootDir": ".",
     "outDir": "build",
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitAny": false
   },
-  "files": [
-    "./src/index.ts",
-    "./typings/index.d.ts",
+  "include": [
+    "./src/**/*",
     "./ambient.d.ts"
   ],
   "exclude": [
     "build",
-    "node_modules",
-    "typings"
+    "node_modules"
   ]
 }

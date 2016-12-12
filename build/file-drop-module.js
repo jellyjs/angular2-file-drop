@@ -18,6 +18,9 @@ var FileDropModule = (function () {
             declarations: [
                 file_drop_1.FileDropDirective,
             ],
+            exports: [
+                file_drop_1.FileDropDirective,
+            ],
         }), 
         __metadata('design:paramtypes', [])
     ], FileDropModule);

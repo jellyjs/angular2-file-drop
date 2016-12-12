@@ -39,7 +39,9 @@ var FileDropDirective = (function () {
         }
         this.preventAndStop(event);
         this.emitFileOver(false);
-        this.readFile(transfer.files[0]);
+        for (var i = 0; i < transfer.files.length; i++) {
+            this.readFile(transfer.files[i]);
+        }
     };
     FileDropDirective.prototype.readFile = function (file) {
         var _this = this;
@@ -48,6 +50,7 @@ var FileDropDirective = (function () {
             this.emitFileDrop(file);
         }
         else {
+            // XXX Waiting for angular/zone.js#358
             var method = "readAs" + strategy;
             FileAPI[method](file, function (event) {
                 if (event.type === 'load') {
@@ -117,7 +120,7 @@ var FileDropDirective = (function () {
             '$event',
         ]), 
         __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [DragEvent]), 
+        __metadata('design:paramtypes', [Object]), 
         __metadata('design:returntype', void 0)
     ], FileDropDirective.prototype, "onDragOver", null);
     __decorate([
@@ -125,7 +128,7 @@ var FileDropDirective = (function () {
             '$event',
         ]), 
         __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [DragEvent]), 
+        __metadata('design:paramtypes', [Object]), 
         __metadata('design:returntype', void 0)
     ], FileDropDirective.prototype, "onDragLeave", null);
     __decorate([
@@ -133,7 +136,7 @@ var FileDropDirective = (function () {
             '$event',
         ]), 
         __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [DragEvent]), 
+        __metadata('design:paramtypes', [Object]), 
         __metadata('design:returntype', void 0)
     ], FileDropDirective.prototype, "onDrop", null);
     FileDropDirective = __decorate([

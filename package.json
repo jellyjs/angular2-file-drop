@@ -1,16 +1,14 @@
 {
   "name": "angular2-file-drop",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Angular2 component with Drag and Drop support for files",
-  "main": "build/src/index.js",
-  "typings": "./build/src/index.d.ts",
+  "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "npm run lint",
     "build": "tsc",
     "watch": "tsc -w",
-    "lint": "tslint src/*.ts",
-    "prepublish": "npm run build"
+    "lint": "tslint src/*.ts"
   },
   "repository": {
     "type": "git",
@@ -39,12 +37,12 @@
     "@angular/core": "^2.0.0",
     "@angular/platform-browser-dynamic": "2.0.0",
     "@angular/platform-browser": "2.0.0",
+    "@types/core-js": "^0.9.0",
     "reflect-metadata": "^0.1.8",
+    "core-js": "^2.4.1",
     "rxjs": "5.0.0-beta.12",
-    "tsc": "^1.20150623.0",
-    "tslint": "^3.10.2",
-    "typescript": "^1.8.10",
-    "typings": "^1.4.0",
+    "tslint": "^3.4.0",
+    "typescript": "2.0.3",
     "zone.js": "^0.6.21"
   }
 }
