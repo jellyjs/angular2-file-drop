@@ -2,15 +2,19 @@
   "name": "angular2-file-drop",
   "version": "0.0.5",
   "description": "Angular2 component with Drag and Drop support for files",
-  "main": "build/src/index.js",
-  "typings": "./build/src/index.d.ts",
+  "main": "build/bundles/index.umd.js",
+  "typings": "build/index.d.ts",
+  "module": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "npm run lint",
-    "build": "tsc",
+    "build": "tsc && npm run bundle",
     "watch": "tsc -w",
     "lint": "tslint src/*.ts",
-    "prepublish": "npm run build"
+    "build:aot": "node_modules/.bin/ngc",
+    "prepublish": "npm run build && npm run build:aot",
+    "rollup": "rollup -i ./build/index.js -o ./build/bundles/index.umd.js -n ng.file-drop -c rollup.config.js",
+    "bundle": "npm run rollup"
   },
   "repository": {
     "type": "git",
@@ -31,20 +35,24 @@
   },
   "homepage": "https://github.com/jellyjs/angular2-file-drop#readme",
   "dependencies": {
+    "@types/es6-shim": "^0.31.32",
     "fileapi": "^2.0.20"
   },
   "devDependencies": {
-    "@angular/common": "^2.0.0",
-    "@angular/compiler": "2.0.0",
-    "@angular/core": "^2.0.0",
-    "@angular/platform-browser-dynamic": "2.0.0",
-    "@angular/platform-browser": "2.0.0",
+    "@angular/common": "^2.4.3",
+    "@angular/compiler": "^2.4.3",
+    "@angular/compiler-cli": "^2.4.3",
+    "@angular/core": "^2.4.3",
+    "@angular/platform-browser": "2.4.3",
+    "@angular/platform-browser-dynamic": "2.4.3",
     "reflect-metadata": "^0.1.8",
-    "rxjs": "5.0.0-beta.12",
+    "rxjs": "5.0.3",
     "tsc": "^1.20150623.0",
     "tslint": "^3.10.2",
-    "typescript": "^1.8.10",
+    "typescript": "^2.0.10",
     "typings": "^1.4.0",
-    "zone.js": "^0.6.21"
+    "zone.js": "^0.7.2",
+    "rollup": "^0.38.0",
+    "rollup-plugin-babel": "^2.6.1"
   }
 }
