@@ -1,6 +1,6 @@
 {
   "name": "angular2-file-drop",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Angular2 component with Drag and Drop support for files",
   "main": "build/bundles/index.umd.js",
   "typings": "build/index.d.ts",
@@ -47,7 +47,6 @@
     "@angular/platform-browser-dynamic": "2.4.3",
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.3",
-    "tsc": "^1.20150623.0",
     "tslint": "^3.10.2",
     "typescript": "^2.0.10",
     "typings": "^1.4.0",
