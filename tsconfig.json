@@ -1,23 +1,28 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "es2015",
     "sourceMap": true,
     "declaration": true,
-    "rootDir": ".",
-    "outDir": "build",
+    "rootDir": "./src",
+    "outDir": "./build",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "types": ["@types/es6-shim"],
+    "moduleResolution": "node"
   },
   "files": [
     "./src/index.ts",
-    "./typings/index.d.ts",
     "./ambient.d.ts"
   ],
   "exclude": [
     "build",
     "node_modules",
     "typings"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "genDir": "aot",
+    "skipMetadataEmit" : false
+  }
 }
