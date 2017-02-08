@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/jellyjs/angular2-file-drop#readme",
   "dependencies": {
-    "@types/es6-shim": "^0.31.32",
+    "es6-shim": "^0.35.3",
     "fileapi": "^2.0.20"
   },
   "devDependencies": {
