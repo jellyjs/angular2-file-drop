@@ -10,7 +10,7 @@ var __decorate$1 = (undefined && undefined.__decorate) || function (decorators, 
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata$1 = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var FileDropDirective = (function () {
@@ -104,48 +104,48 @@ var FileDropDirective = (function () {
         }
         return false;
     };
-    __decorate$1([
-        _angular_core.Output(), 
-        __metadata$1('design:type', _angular_core.EventEmitter)
-    ], FileDropDirective.prototype, "fileOver", void 0);
-    __decorate$1([
-        _angular_core.Output(), 
-        __metadata$1('design:type', _angular_core.EventEmitter)
-    ], FileDropDirective.prototype, "onFileDrop", void 0);
-    __decorate$1([
-        _angular_core.Input(), 
-        __metadata$1('design:type', Object)
-    ], FileDropDirective.prototype, "options", void 0);
-    __decorate$1([
-        _angular_core.HostListener('dragover', [
-            '$event',
-        ]), 
-        __metadata$1('design:type', Function), 
-        __metadata$1('design:paramtypes', [Object]), 
-        __metadata$1('design:returntype', void 0)
-    ], FileDropDirective.prototype, "onDragOver", null);
-    __decorate$1([
-        _angular_core.HostListener('dragleave', [
-            '$event',
-        ]), 
-        __metadata$1('design:type', Function), 
-        __metadata$1('design:paramtypes', [Object]), 
-        __metadata$1('design:returntype', void 0)
-    ], FileDropDirective.prototype, "onDragLeave", null);
-    __decorate$1([
-        _angular_core.HostListener('drop', [
-            '$event',
-        ]), 
-        __metadata$1('design:type', Function), 
-        __metadata$1('design:paramtypes', [Object]), 
-        __metadata$1('design:returntype', void 0)
-    ], FileDropDirective.prototype, "onDrop", null);
-    FileDropDirective = __decorate$1([
-        _angular_core.Directive({ selector: '[fileDrop]' }), 
-        __metadata$1('design:paramtypes', [_angular_core.ElementRef])
-    ], FileDropDirective);
     return FileDropDirective;
 }());
+__decorate$1([
+    _angular_core.Output(),
+    __metadata("design:type", _angular_core.EventEmitter)
+], FileDropDirective.prototype, "fileOver", void 0);
+__decorate$1([
+    _angular_core.Output(),
+    __metadata("design:type", _angular_core.EventEmitter)
+], FileDropDirective.prototype, "onFileDrop", void 0);
+__decorate$1([
+    _angular_core.Input(),
+    __metadata("design:type", Object)
+], FileDropDirective.prototype, "options", void 0);
+__decorate$1([
+    _angular_core.HostListener('dragover', [
+        '$event',
+    ]),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], FileDropDirective.prototype, "onDragOver", null);
+__decorate$1([
+    _angular_core.HostListener('dragleave', [
+        '$event',
+    ]),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], FileDropDirective.prototype, "onDragLeave", null);
+__decorate$1([
+    _angular_core.HostListener('drop', [
+        '$event',
+    ]),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], FileDropDirective.prototype, "onDrop", null);
+FileDropDirective = __decorate$1([
+    _angular_core.Directive({ selector: '[fileDrop]' }),
+    __metadata("design:paramtypes", [_angular_core.ElementRef])
+], FileDropDirective);
 
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -153,27 +153,21 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var FileDropModule = (function () {
+exports.FileDropModule = (function () {
     function FileDropModule() {
     }
-    FileDropModule = __decorate([
-        _angular_core.NgModule({
-            declarations: [
-                FileDropDirective,
-            ],
-            exports: [FileDropDirective],
-            imports: [],
-            providers: [],
-        }), 
-        __metadata('design:paramtypes', [])
-    ], FileDropModule);
     return FileDropModule;
 }());
-
-exports.FileDropModule = FileDropModule;
+exports.FileDropModule = __decorate([
+    _angular_core.NgModule({
+        declarations: [
+            FileDropDirective,
+        ],
+        exports: [FileDropDirective],
+        imports: [],
+        providers: [],
+    })
+], exports.FileDropModule);
 
 Object.defineProperty(exports, '__esModule', { value: true });
 

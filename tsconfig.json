@@ -9,8 +9,8 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitAny": false,
-    "types": ["@types/es6-shim"],
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "lib": ["dom", "es2015"]
   },
   "files": [
     "./src/index.ts",
