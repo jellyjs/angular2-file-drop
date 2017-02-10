@@ -1,6 +1,6 @@
 {
   "name": "angular2-file-drop",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Angular2 component with Drag and Drop support for files",
   "main": "build/bundles/index.umd.js",
   "typings": "build/index.d.ts",
