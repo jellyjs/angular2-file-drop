@@ -6,7 +6,7 @@
   "typings": "build/index.d.ts",
   "module": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run build",
     "prebuild": "npm run lint",
     "build": "tsc && npm run bundle",
     "watch": "tsc -w",
