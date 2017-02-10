@@ -1,0 +1,26 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - '6'
+
+cache:
+  directories:
+    - "$HOME/.npm"
+    - node_modules
+
+notifications:
+  email: false
+
+before_install:
+  - npm prune
+
+deploy:
+  provider: npm
+  email: kamil.kisiela@gmail.com
+  api_key:
+    secure: B8OeaNoGwXeotY+Xlfuc5KgO4UhfXH1Lq42hVIJkhna4+iMd4aAiT7UWs3VwKmY92oMc8M8sF38QUeMemolgWdy/bLNMZ15zIt08TNUgBZa9KslR/u/CLcMasplTtLseIYDQrC7okvNT2+rH6kCf2h7SJjkkMw1O6B7e39ygLRzp+NXLHLzfTYD9MZPvtEF1UflI/AbpnUSu2KujuekQbIJSEUG1dF3UDUkRfgtPQ7+HA2tzlE8sxTO+ISvLv56yoHtKt85FEKhcvU7O7JLU271eD0ORiCCvOYyGQzKfotmc5Z0X+5z0q5TUw2bTBpW0t/SrNpi11N/Vm0RMxMWHpsKS0kSBhIpv+QxExK4S3G5kd3hzBu9PIplkjcl9r/h9THi34UFfhrs0Z4b4z/+3ZAhkzhpQfNjPcbsCee5slTgyDxvIp1+FfLUt3zuy3pS9tSjdQJKdiiR9LjF8izLwgXSb7Z6bs1Ze/K1E9ttOZCWWkI3Ry+D0nzBJCQEUgSlK5n0VIMqhhUVC9djdVg6A11ryDTnlqi6pHxz00wXhWnKVNvMrs2Lj4Jhwf1sGyJeZY6x1jD7B/E7vBoqzp56UKr0dztnSDwRFnBUwv8HM0bywVzS2hWu+d7sRy2lMorcEYS8P90VF16Papdziytbr4ytyGDx78x4DupGRJGmpODk=
+  on:
+    tags: true
+    repo: jellyjs/angular2-file-drop
