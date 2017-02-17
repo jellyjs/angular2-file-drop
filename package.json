@@ -1,8 +1,10 @@
 {
   "name": "angular2-file-drop",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Angular2 component with Drag and Drop support for files",
+  "module": "build/index.js",
   "main": "build/index.js",
+  "typings": "build/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "npm run lint",
@@ -30,6 +32,9 @@
   "homepage": "https://github.com/jellyjs/angular2-file-drop#readme",
   "dependencies": {
     "fileapi": "^2.0.20"
+  },
+  "peerDependencies": {
+    "@angular/core": "^2.0.0"
   },
   "devDependencies": {
     "@angular/common": "^2.0.0",
