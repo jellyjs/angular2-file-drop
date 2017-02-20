@@ -1,19 +1,22 @@
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('fileapi')) :
+	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'fileapi'], factory) :
+	(factory((global['bergben-angular2-file-drop'] = global['bergben-angular2-file-drop'] || {}),global.ng.core));
+}(this, (function (exports,_angular_core) { 'use strict';
+
+var __decorate$1 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-require('fileapi');
-var core_1 = require('@angular/core');
-var FileDropDirective = (function () {
+exports.FileDropDirective = (function () {
     function FileDropDirective(element) {
-        this.fileOver = new core_1.EventEmitter();
-        this.onFileDrop = new core_1.EventEmitter();
+        this.fileOver = new _angular_core.EventEmitter();
+        this.onFileDrop = new _angular_core.EventEmitter();
         this.element = element;
     }
     FileDropDirective.prototype.onDragOver = function (event) {
@@ -103,47 +106,71 @@ var FileDropDirective = (function () {
         }
         return false;
     };
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], FileDropDirective.prototype, "fileOver", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], FileDropDirective.prototype, "onFileDrop", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], FileDropDirective.prototype, "options", void 0);
-    __decorate([
-        core_1.HostListener('dragover', [
-            '$event',
-        ]), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [Object]), 
-        __metadata('design:returntype', void 0)
-    ], FileDropDirective.prototype, "onDragOver", null);
-    __decorate([
-        core_1.HostListener('dragleave', [
-            '$event',
-        ]), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [Object]), 
-        __metadata('design:returntype', void 0)
-    ], FileDropDirective.prototype, "onDragLeave", null);
-    __decorate([
-        core_1.HostListener('drop', [
-            '$event',
-        ]), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [Object]), 
-        __metadata('design:returntype', void 0)
-    ], FileDropDirective.prototype, "onDrop", null);
-    FileDropDirective = __decorate([
-        core_1.Directive({ selector: '[fileDrop]' }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], FileDropDirective);
     return FileDropDirective;
 }());
-exports.FileDropDirective = FileDropDirective;
-//# sourceMappingURL=file-drop.js.map
+__decorate$1([
+    _angular_core.Output(),
+    __metadata("design:type", _angular_core.EventEmitter)
+], exports.FileDropDirective.prototype, "fileOver", void 0);
+__decorate$1([
+    _angular_core.Output(),
+    __metadata("design:type", _angular_core.EventEmitter)
+], exports.FileDropDirective.prototype, "onFileDrop", void 0);
+__decorate$1([
+    _angular_core.Input(),
+    __metadata("design:type", Object)
+], exports.FileDropDirective.prototype, "options", void 0);
+__decorate$1([
+    _angular_core.HostListener('dragover', [
+        '$event',
+    ]),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], exports.FileDropDirective.prototype, "onDragOver", null);
+__decorate$1([
+    _angular_core.HostListener('dragleave', [
+        '$event',
+    ]),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], exports.FileDropDirective.prototype, "onDragLeave", null);
+__decorate$1([
+    _angular_core.HostListener('drop', [
+        '$event',
+    ]),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], exports.FileDropDirective.prototype, "onDrop", null);
+exports.FileDropDirective = __decorate$1([
+    _angular_core.Directive({ selector: '[fileDrop]' }),
+    __metadata("design:paramtypes", [_angular_core.ElementRef])
+], exports.FileDropDirective);
+
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+exports.FileDropModule = (function () {
+    function FileDropModule() {
+    }
+    return FileDropModule;
+}());
+exports.FileDropModule = __decorate([
+    _angular_core.NgModule({
+        declarations: [
+            exports.FileDropDirective,
+        ],
+        exports: [
+            exports.FileDropDirective,
+        ],
+    })
+], exports.FileDropModule);
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));

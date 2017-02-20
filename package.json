@@ -2,15 +2,14 @@
   "name": "angular2-file-drop",
   "version": "0.1.1",
   "description": "Angular2 component with Drag and Drop support for files",
-  "module": "build/index.js",
-  "main": "build/index.js",
-  "typings": "build/index.d.ts",
+  "main": "dist/bundles/bergben-angular2-file-drop.umd.js",
+  "module": "dist/file-drop.js",
+  "typings": "dist/file-drop.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prebuild": "npm run lint",
-    "build": "tsc",
-    "watch": "tsc -w",
-    "lint": "tslint src/*.ts"
+    "transpile": "ngc",
+    "package": "rollup -c",
+    "minify": "uglifyjs dist/bundles/bergben-angular2-file-drop.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/bergben-angular2-file-drop.umd.min.js",
+    "build": "npm run transpile && npm run package && npm run minify"
   },
   "repository": {
     "type": "git",
@@ -38,16 +37,18 @@
   },
   "devDependencies": {
     "@angular/common": "^2.0.0",
-    "@angular/compiler": "2.0.0",
+    "@angular/compiler": "^2.0.0",
+    "@angular/compiler-cli": "^2.4.8",
     "@angular/core": "^2.0.0",
-    "@angular/platform-browser-dynamic": "2.0.0",
     "@angular/platform-browser": "2.0.0",
-    "@types/core-js": "^0.9.0",
-    "reflect-metadata": "^0.1.8",
+    "@angular/platform-browser-dynamic": "2.0.0",
     "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.8",
+    "rollup": "^0.41.4",
     "rxjs": "5.0.0-beta.12",
     "tslint": "^3.4.0",
-    "typescript": "2.0.3",
+    "typescript": "^2.0.3",
+    "uglify-js": "^2.7.5",
     "zone.js": "^0.6.21"
   }
 }
